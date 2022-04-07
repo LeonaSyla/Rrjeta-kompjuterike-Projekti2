@@ -1,2 +1,2 @@
-# Rrjeta-kompjuterike---Projekti2
+# Rrjeta-kompjuterike-Projekti2
 Socket programming
