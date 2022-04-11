@@ -17,9 +17,24 @@
 						<input type="submit" name="btnSend" value="Dergo">
 					</td>
 				</tr>
-				<?php
-				
+				<?php 
+				$host = '127.0.0.1';
+				$port = 25003;
+
+				if (isset($_POST['btnSend'])) {
+					$msg = $_REQUEST['txtMessage'];
+					$sock = socket_create(AF_INET, SOCK_STREAM, 0);
+					socket_connect($sock, $host, $port) or die("Lidhja nuk u krijua.");
+
+					socket_write($sock,$msg,strlen($msg)) or die("Nuk mund te shkruash.");
+
+					$reply = socket_read($sock, 1024);
+					$reply = trim($reply);
+					$reply = "Serveri:\t".$reply;
+				}
 				?>
+				
+			
 				
 				<tr>
 					<td>
