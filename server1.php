@@ -21,3 +21,19 @@ class Chat
 }
 
 do
+{
+	$accept = socket_accept($sock) or die("Nuk u pranua lidhja.");
+	$msg = socket_read($accept, 1024) or die("Nuk u lexua mesazhi.\n");
+	$msg = trim($msg);
+
+	echo "Klienti:\t".$msg."\n\n";
+
+	$line = new Chat();
+
+	echo "Pergjigjja si server:\t";
+	$reply = $line->readline();
+
+	socket_write($accept, $reply, strlen($reply)) or die("Nuk mund te shkruash.");
+}while (true);
+	socket_close($accept,$sock);
+?>
