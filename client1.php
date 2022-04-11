@@ -17,6 +17,9 @@
 						<input type="submit" name="btnSend" value="Dergo">
 					</td>
 				</tr>
+				<?php
+				
+				?>
 				
 				<tr>
 					<td>
