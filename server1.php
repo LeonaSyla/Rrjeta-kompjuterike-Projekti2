@@ -4,8 +4,8 @@ $host = "127.0.0.1";
 $port = 25003;
 set_time_limit(0);
 
-$sock = socket_create(AF_INET, SOCK_STREAM, 0) or die("Socket eshte krijuar\n");
-$result = socket_bind($sock, $host,$port) or die("Eshte krijuar lidhja.\n");
+$sock = socket_create(AF_INET, SOCK_STREAM, 0) or die("Socket nuk eshte krijuar\n");
+$result = socket_bind($sock, $host,$port) or die("Nuk eshte krijuar lidhja.\n");
 
 $result = socket_listen($sock,3) or die("Listening...\n");
 
