@@ -62,7 +62,7 @@ while (true){
     if (in_array($socket, $read))
     {
         $clients[] = $newsock = socket_accept($socket);
-        socket_write($newsock, "Gjithsej jane lidhur ".(count($clients) - 1)." client(a) me serverin\n");
+        socket_write($newsock, "Gjithsej jane lidhur ".(count($clients) - 1)." client(a) me serverin\n\n");
         socket_getpeername($newsock, $ip, $port);
         echo "Klienti i ri eshte lidhur: {$ip}\n\n";
         $key = array_search($socket, $read);
@@ -87,7 +87,7 @@ foreach ($read as $read_sock){
         $data = trim($data);
         if (!empty($data))
         {
-            echo " Klienti ".(count($clients) - 1). ": {$data}\n\n";
+            echo "\nKlienti ".(count($clients) - 1). ": {$data}\n\n";
             // send some message to listening socket
             //socket_write($read_sock, $send_data);
            // send this to all the clients in the $clients array (except the first one, which is a listening socket)
