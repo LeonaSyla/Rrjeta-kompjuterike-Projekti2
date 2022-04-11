@@ -8,10 +8,10 @@ $socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("socket_create fail\n");
 $result = socket_connect($socket, $host, $port) or die("socket_connect fail\n");
 
 
-echo "Eshte arritur lidhja. \n\n";
+echo "Lidhja me server eshte arritur. \n\n";
 
 while (true)
-{ echo "Une si klient: ";
+{ echo "\nSheno: ";
     $in = fgets(STDIN);
     $out = '';
 
