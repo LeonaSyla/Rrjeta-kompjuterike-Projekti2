@@ -10,5 +10,18 @@ $result = socket_connect($socket, $host, $port) or die("socket_connect fail\n");
 
 echo "Eshte arritur lidhja. \n\n";
 
-while (true){
+while (true)
+{ echo "Une si klient: ";
+    $in = fgets(STDIN);
+    $out = '';
+
+    if(!socket_write($socket, $in, strlen($in))) {
+        echo "socket_write() failed. reason: " . socket_strerror($socket) . "\n";
+    }
+
+    $out = socket_read($socket, 9999);
+    echo "Serveri: $out\n";
+}
+socket_close($socket);
+?> 
  
